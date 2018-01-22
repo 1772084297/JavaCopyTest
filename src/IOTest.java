@@ -45,7 +45,7 @@ public class IOTest {
 			OutputStream out = new FileOutputStream(copyfile);
 			byte []data = new byte[1024];  //每次读取1024字节
 			int len =0;                                      //保存每次读取的个数
-			while((len = in.read())!=-1) {
+			while((len = in.read(data))!=-1) {         //有点问题
 				out.write(data,0,len);
 			}
 			in.close();
@@ -63,9 +63,4 @@ public class IOTest {
 		
 	}
 
-	
-	private static Object indexof(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
